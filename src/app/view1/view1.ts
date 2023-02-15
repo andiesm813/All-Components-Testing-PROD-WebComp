@@ -13,9 +13,12 @@ export default class View1 extends LitElement {
     :host {
       height: 100%;
       display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: flex-start;
       align-items: stretch;
-      align-content: flex-start;
+      align-content: stretch;
+      overflow: auto;
     }
     .column-layout {
       display: flex;
@@ -24,26 +27,29 @@ export default class View1 extends LitElement {
     .group {
       justify-content: flex-start;
       align-items: stretch;
-      align-content: flex-start;
-      overflow: auto;
+      align-content: stretch;
+      gap: 16px;
       position: relative;
       padding: 24px;
       min-width: 50px;
       min-height: 50px;
       flex-grow: 1;
-      flex-basis: 0;
+      flex-shrink: 0;
     }
     .row-layout {
       display: flex;
     }
     .group_1 {
+      flex-wrap: wrap;
       justify-content: flex-start;
       align-items: stretch;
-      align-content: flex-start;
+      align-content: stretch;
       gap: 16px;
       position: relative;
       min-width: 50px;
       min-height: 50px;
+      flex-grow: 1;
+      flex-shrink: 0;
     }
     .card {
       width: 240px;
@@ -74,6 +80,7 @@ export default class View1 extends LitElement {
       min-width: 50px;
       min-height: 50px;
       max-width: 360px;
+      flex-shrink: 0;
     }
     .group_4 {
       flex-wrap: wrap;
@@ -103,17 +110,6 @@ export default class View1 extends LitElement {
       min-width: 240px;
       min-height: 50px;
     }
-    .group_7 {
-      justify-content: flex-start;
-      align-items: stretch;
-      align-content: flex-start;
-      gap: 16px;
-      position: relative;
-      min-width: 50px;
-      min-height: 50px;
-      flex-grow: 1;
-      flex-basis: 0;
-    }
     .tabs {
       min-width: 0;
       min-height: 0;
@@ -124,7 +120,7 @@ export default class View1 extends LitElement {
       overflow-y: auto;
       flex-shrink: 0;
     }
-    .group_8 {
+    .group_7 {
       justify-content: flex-start;
       align-items: stretch;
       align-content: flex-start;
@@ -187,7 +183,7 @@ export default class View1 extends LitElement {
       min-width: 0;
       min-height: 0;
       flex-grow: 1;
-      flex-shrink: 0;
+      flex-basis: 0;
     }
     .calendar {
       width: max-content;
@@ -527,7 +523,7 @@ export default class View1 extends LitElement {
             <span class="textarea">Textarea not yet available in WebComponents</span>
           </div>
         </div>
-        <div class="row-layout group_7">
+        <div class="row-layout group_1">
           <igc-tabs class="tabs">
             <igc-tab ?selected="${true}">
               <span class="material-icons">info</span>
@@ -563,7 +559,7 @@ export default class View1 extends LitElement {
             </igc-expansion-panel>
           </igc-accordion>
           <igc-calendar ?hide-header="${false}" header-orientation="horizontal" class="calendar"></igc-calendar>
-          <div class="column-layout group_8">
+          <div class="column-layout group_7">
             <h1 class="content">
               Heading
             </h1>
