@@ -16,7 +16,6 @@ export default class App extends LitElement {
       justify-content: flex-start;
       align-items: stretch;
       align-content: flex-start;
-      overflow: auto;
     }
     .navbar {
       height: max-content;
